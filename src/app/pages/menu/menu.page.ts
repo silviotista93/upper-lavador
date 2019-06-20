@@ -13,18 +13,32 @@ export class MenuPage implements OnInit {
 
   usuario: Usuario = {};
   URL = environment.url;
-
+  
   pages = [];
-  constructor(private navCtrl: NavController, private userService: UserService) { }
+  constructor(
+    private navCtrl: NavController,
+    private userService: UserService) { }
 
   ngOnInit() {
     setTimeout(() => {
       this.usuario = this.userService.getUsuario();
+      console.log('usuasasasajisas', this.usuario)
     }, 500);
     this.pages = [
-      { title: 'Solicitudes', url: '/menu/solicitudes', icon: 'subscripcion'},
-      { title: 'Historial', url: '/menu/historial', icon: 'historial'},
+      { title: 'Solicitudes', url: '/menu/solicitudes', icon: 'subscripcion' },
+      { title: 'Historial', url: '/menu/historial', icon: 'historial' },
     ];
+  }
+
+  async onViewWillEnter() {
+    setTimeout(() => {
+      this.usuario = this.userService.getUsuario();
+      console.log('usuasasasajisas', this.usuario)
+    }, 500);
+  }
+
+  async onClick() {
+    await this.onViewWillEnter();
   }
 
   pushPerfil() {

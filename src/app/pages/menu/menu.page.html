@@ -1,5 +1,5 @@
-<ion-split-pane>
-  <ion-menu  contentId="content">
+<ion-split-pane (click)="onClick()">
+  <ion-menu  contentId="content" >
   
     <ion-header>
       <ion-menu-toggle auto-hide="false" (click)="pushPerfil()" color="primary">
@@ -7,7 +7,6 @@
           <ion-row style="padding: 50px 0px 37px 17px;">
             <ion-col size="4">
               <ion-avatar style="width: 90px !important; height: 90px !important;">
-                 <!-- <img src="../assets/images/avatar_perfil.png"> -->
                   <img *ngIf="usuario.social_acounts === null" src="{{ URL + usuario.avatar}}">
                 <img *ngIf="usuario.social_acounts " src="{{ usuario.avatar}}"> 
               </ion-avatar>

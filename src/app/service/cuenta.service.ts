@@ -4,14 +4,19 @@ import { HttpHeaders, HttpClient, HttpRequest } from '@angular/common/http';
 import { UserService } from './user.service';
 import { UiServiceService } from './ui-service.service';
 import { Usuario } from '../interfaces/interfaces';
+import { FileTransfer, FileUploadOptions, FileTransferObject } from '@ionic-native/file-transfer/ngx';
+
 
 
 @Injectable({
   providedIn: 'root'
 })
+
+
 export class CuentaService {
 
   URL = environment.url;
+  image: any = "";
 
   headers = new HttpHeaders({
     'Content-Type': 'application/json',
@@ -21,9 +26,11 @@ export class CuentaService {
   constructor(
     private userService: UserService,
     private http: HttpClient,
+    private fileTransfer: FileTransfer,
     private uiService: UiServiceService) { }
 
   // #region Actualizar contraseña
+  // tslint:disable-next-line:variable-name
   updatePassword(password: string, password_confirmation: string, id: string) {
     const data = { password, password_confirmation, id };
 
@@ -117,5 +124,35 @@ export class CuentaService {
     });
   }
   // #endregion
+
+
+  // #region Actulizar Foto
+  updateAvatar(img: string) {
+
+    const options: FileUploadOptions = {
+      fileKey: 'avatar',
+      headers: { 'Authorization': this.userService.token }
+    };
+
+    console.log('token generado', this.userService.token)
+
+    const fileTransfer: FileTransferObject = this.fileTransfer.create();
+
+    return new Promise(resolve => {
+      fileTransfer.upload(img, `${this.URL}/api/profile/update-avatar`, options)
+        .then(async (data) => {
+          this.image = await data.response;
+          this.userService.usuario.avatar = this.image;
+          console.log('Data imagen', this.image);
+          this.uiService.successToast('¡Imagen actualizada!');
+          resolve(true);
+        }).catch(err => {
+
+          console.log('error', err)
+        });
+    })
+  }
+  // #endregion
+
 
 }

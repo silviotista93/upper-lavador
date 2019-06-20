@@ -22,7 +22,11 @@
             <ion-avatar  style="width: 110px !important; height: 110px !important;">
                 <img *ngIf="usuario.social_acounts === null" src="{{ URL + usuario.avatar}}">
                 <img *ngIf="usuario.social_acounts " src="{{ usuario.avatar}}">
-                <ion-badge style="font-size: 25px;margin-top: -34px;margin-bottom: 15px;margin-left: 32px;margin-right: -34px;" color="dark"><ion-icon name="camera"></ion-icon></ion-badge>
+                <ion-badge style="font-size: 25px;margin-top: -34px;margin-bottom: 15px;margin-left: 32px;margin-right: -34px;" 
+                           color="dark"><ion-icon 
+                           name="camera"
+                           (click)="presentActionSheet()">
+                </ion-icon></ion-badge>
              </ion-avatar> 
           </ion-col>
       </ion-row>

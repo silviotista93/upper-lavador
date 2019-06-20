@@ -133,7 +133,7 @@ export class UserService {
           // tslint:disable-next-line:no-string-literal
           this.roles = resp['user']['roles'];
           console.log(this.roles);
-          if ( this.roles[0].id === 3 ) {
+          if ( this.roles[0].id === 2 ) {
             console.log('respuesta de validar token ', resp);
             // tslint:disable-next-line:no-string-literal
             this.usuario = resp['user'];
