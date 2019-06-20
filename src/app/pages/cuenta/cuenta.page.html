@@ -1,0 +1,112 @@
+<ion-header no-border>
+  <ion-toolbar mode="ios" color="primary">
+    <ion-buttons slot="start">
+       <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button>
+        <img slot="start" src="/assets/iconos/notificacion.png">
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="md title-android">
+      Perfil
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-toolbar color="primary">
+    <ion-grid>
+      <ion-row>
+        <ion-col style="text-align: -webkit-center;" align-self-center>
+            <ion-avatar  style="width: 110px !important; height: 110px !important;">
+                <img *ngIf="usuario.social_acounts === null" src="{{ URL + usuario.avatar}}">
+                <img *ngIf="usuario.social_acounts " src="{{ usuario.avatar}}">
+                <ion-badge style="font-size: 25px;margin-top: -34px;margin-bottom: 15px;margin-left: 32px;margin-right: -34px;" color="dark"><ion-icon name="camera"></ion-icon></ion-badge>
+             </ion-avatar> 
+          </ion-col>
+      </ion-row>
+    </ion-grid>
+    <ion-grid>
+        <ion-row>
+          <ion-col style="text-align: center" align-self-center>
+              <ion-label style="font-weight: bold; font-size: 20px;">{{ usuario.name}} {{ usuario.last_name}}</ion-label>
+              <p style="font-size: 16px; margin: 5px 0px;">{{ usuario.email }}</p>
+            </ion-col>
+        </ion-row>
+      </ion-grid>
+  </ion-toolbar>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+          <ion-list style="margin-bottom: 1px !important" list="none">
+              <ion-list-header>
+                <ion-label>Información Personal</ion-label>
+              </ion-list-header>
+              <form (ngSubmit)="updateProfile( fProfile )" #fProfile="ngForm">
+                      <ion-item>
+                          <ion-label position="stacked">Nombre</ion-label>
+                          <ion-input *ngIf="usuario.social_acounts === null" name="name" [(ngModel)]="usuario.name"></ion-input>
+                          <ion-input *ngIf="usuario.social_acounts !== null" name="name"  [(ngModel)]="usuario.name"></ion-input>
+                      </ion-item>
+                      <ion-item>
+                        <ion-label position="stacked">Apellidos</ion-label>
+                        <ion-input *ngIf="usuario.social_acounts === null" name="last_name"  [(ngModel)]="usuario.last_name"></ion-input>
+                        <ion-input *ngIf="usuario.social_acounts !== null" name="last_name" [(ngModel)]="usuario.last_name"></ion-input>
+                    </ion-item>
+                      <ion-item>
+                          <ion-label position="stacked">Email</ion-label>
+                          <ion-input *ngIf="usuario.social_acounts === null" name="email" readonly type="email" [(ngModel)]="usuario.email"></ion-input>
+                          <ion-input *ngIf="usuario.social_acounts !== null" name="email" readonly type="email" [(ngModel)]="usuario.email"></ion-input>
+
+                      </ion-item>
+                      <ion-item>
+                        <ion-label position="stacked">Telefono 1</ion-label>
+                        <ion-input name="phone_1" [(ngModel)]="usuario.phone_1"></ion-input>
+                    </ion-item>
+                    <ion-item>
+                      <ion-label position="stacked">Telefono 2</ion-label>
+                      <ion-input name="phone_2"  [(ngModel)]="usuario.phone_2"></ion-input>
+                    </ion-item>
+                    <ion-item style="display: none">
+                      <ion-label position="stacked">id</ion-label>
+                      <ion-input name="id"  [(ngModel)]="usuario.id"></ion-input>
+                    </ion-item>
+                      <ion-button type="submit" class="ion-margin-top" expand="block" color="primary">Actualizar</ion-button>
+                    </form>
+           </ion-list>
+          
+            <form (ngSubmit)="updatePassword( fPassword )" #fPassword="ngForm">
+            <ion-list *ngIf="usuario.social_acounts === null" style="margin-bottom: 1px !important" list="none">
+                <ion-list-header>
+                  <ion-label>Actualizar Contraseña</ion-label>
+                </ion-list-header>
+                <ion-item>
+                    <ion-label position="stacked">Contraseña nueva</ion-label>
+                    <ion-input [(ngModel)]="dataPassword.password" name="password" type="password"></ion-input>
+                </ion-item>
+                <ion-item>
+                    <ion-label position="stacked">Confirmar Contraseña</ion-label>
+                    <ion-input [(ngModel)]="dataPassword.password_confirmation" name="password_confirmation" type="password"></ion-input>
+                </ion-item>
+              
+                <ion-button expand="block" type="submit" style="margin: 10px; float: right" color="primary">Actualizar</ion-button>
+            </ion-list>
+          </form>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+  <ion-grid>
+    <ion-row>
+      <ion-col>
+        <ion-item (click) ="logout()" detail="false" style="padding: 0px 0px 15px;" lines="none" [routerDirection]="'root'" [routerLink]="">
+          <!-- <ion-icon slot="start" color="primary" [name]="p.icon"></ion-icon> -->
+          <img slot="start" src = "/assets/iconos/logout.png">
+          <ion-label style="font-weight: 500">
+            Cerrar Sesión
+          </ion-label>
+        </ion-item>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+</ion-content>

@@ -1,0 +1,94 @@
+.mainSlide,
+.mainSlide ion-slide {
+  width: 100%;
+  height: 100%;
+}
+
+img {
+  width: 50%;
+}
+
+.pick-avatar {
+  width: 80px;
+  opacity: 0.3;
+}
+
+.pick-avatar-seleccionado {
+  transition: opacity 0.5s linear;
+  opacity: 1 !important;
+}
+
+ion-content {
+  --overflow: hidden;
+}
+
+ion-input {
+  border: 5px !important;
+}
+
+.text-input-ios,
+.text-input-md {
+  border-radius: 5px;
+  border: 1px solid #efefef;
+}
+
+.text-input {
+  margin: 0;
+  width: calc(100% - 8px);
+  padding: 13px 8px;
+}
+
+.text-size-body {
+  margin: 0px 0px 10px 0px;
+  font-size: 13px;
+  font-weight: 500;
+  color: #606470;
+}
+
+.text-size-title {
+  margin: 0px 0px 10px 0px;
+  font-weight: 700;
+}
+
+.size-icons {
+  height: 25px;
+  width: 13px;
+}
+
+.button-icon {
+  font-size: 20px;
+  width: 80px;
+  height: 35px;
+  font-weight: bold;
+}
+
+.button-login {
+  color: #3277d8;
+  --background: #ffffff !important;
+  font-weight: 400;
+  font-size: 14px;
+  margin: 0px 2px 0px 2px;
+}
+
+.image-slide {
+  width: 100%;
+  height: 250px;
+
+  // background-color: red;
+
+  /* Full height */
+  // height: 100%;
+
+  /* Imagen centrada y colocada de forma elegante */
+  background-position: center;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+.displayed {
+  display: block;
+  margin-left: auto;
+  margin-right: auto;
+  height: 150px;
+  width: 200px;
+}

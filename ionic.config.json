@@ -1,5 +1,8 @@
 {
   "name": "upper-lavador",
-  "integrations": {},
-  "type": "angular"
+  "integrations": {
+    "cordova": {}
+  },
+  "type": "angular",
+  "id": "54c8544b"
 }

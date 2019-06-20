@@ -1,0 +1,76 @@
+<ion-header no-border>
+    <ion-toolbar color="primary">
+      <ion-buttons slot="start">
+        <ion-back-button text=""  defaultHref="/menu/solicitudes"></ion-back-button>
+      </ion-buttons>
+      <ion-buttons slot="end">
+        <ion-button>
+          <img slot="start" src = "/assets/iconos/notificacion.png">
+        </ion-button>
+      </ion-buttons>
+      <ion-title class="md title-android">
+        Información
+      </ion-title>
+    </ion-toolbar>
+  </ion-header>
+  
+
+  <ion-content color="secondary">
+      <ion-fab vertical="bottom" horizontal="end" slot="fixed">
+          <ion-fab-button color="light"><img style="width: 40%" src="/assets/iconos/telefono.png">
+          </ion-fab-button>
+        </ion-fab>
+    <div id="map"></div>
+    <div style="padding: 10px">
+        <ion-grid color="secondary">
+          <h1 style="font-weight: 700">Información</h1>
+            <ion-row>
+                <ion-col size="12" size-lg="12" size-md="12" size-sm="12" size-xs="12">
+                    <ion-item color="secondary" lines="none">
+                        <ion-icon  name="calendar" slot="start"></ion-icon>
+                        <ion-label style="font-size: 16px" text-wrap>01/02/19, 9:35pm</ion-label>
+                    </ion-item>
+                    <ion-item color="secondary" lines="none">
+                        <ion-icon  name="pin" slot="start"></ion-icon>
+                        <ion-label style="font-size: 16px" text-wrap>16th Avenue, 4th Cross Street</ion-label>
+                    </ion-item>
+                    <ion-item color="secondary" lines="none">
+                          <h6 style="color:#3277D8">Cliente: </h6>
+                        <ion-label style="font-size: 16px; padding: 5px; margin: 7px 0px 0px 5px;" text-wrap>Cristian Andres Salazar</ion-label>
+                    </ion-item>
+                    <ion-item color="secondary" lines="none">
+                        <h6 style="color:#3277D8">Costo Lavado: </h6>
+                      <ion-label style="font-size: 20px; padding: 5px; margin: 7px 0px 0px 5px;; color: #FE7B37; font-weight: 800" text-wrap>$20.000</ion-label>
+                  </ion-item>
+                  <ion-item color="secondary" lines="none">
+                      <h6 style="color:#3277D8">Tipo Lavado: </h6>
+                    <ion-label style="font-size: 16px; padding: 5px; margin: 7px 0px 0px 5px;" text-wrap>Exterior</ion-label>
+                </ion-item>
+                </ion-col>
+            </ion-row>
+          </ion-grid>
+          <ion-grid>
+              <h1 style="font-weight: 700">Auto</h1>
+              <ion-row>
+                  <ion-col size="12" size-lg="12" size-md="12" size-sm="12" size-xs="12">
+                      <h4>Mercedez Benz</h4>
+                      <img class="img-autos" src="/assets/images/autos/4.jpg" alt="">
+                      <ion-row>
+                          <ion-col size="3" size-lg="3" size-md="3" size-sm="3" size-xs="3">
+                              <ion-card-title style="font-size: 13px;padding: 5px 0px;">2000 cc</ion-card-title>
+                          </ion-col>
+                          <ion-col size="3" size-lg="3" size-md="3" size-sm="3" size-xs="3">
+                              <ion-badge style="background-color:#FFAC3B; color: #000000;padding: 4px 0px;width: 100%;">QER 359</ion-badge>
+                          </ion-col>
+                      </ion-row>
+              </ion-col>
+              </ion-row>
+            </ion-grid>
+        </div>
+</ion-content>
+<ion-footer no-border>
+  <ion-toolbar>
+    <ion-button (click)="pushConfirmarServicio()" expand="block" color="primary">Tomar Servicio</ion-button>
+  </ion-toolbar>
+</ion-footer>
+

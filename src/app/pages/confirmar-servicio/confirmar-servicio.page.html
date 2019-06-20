@@ -1,0 +1,32 @@
+<ion-header no-border>
+  <ion-toolbar mode="ios" color="primary">
+    <ion-buttons slot="start">
+      <ion-back-button text=""  defaultHref="/menu/detalle-solicitud"></ion-back-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button>
+        <img slot="start" src="/assets/iconos/notificacion.png">
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="md title-android">
+      Confirmar Servicio
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-fab vertical="bottom" horizontal="end">
+    <ion-fab-button (click)="ubicacionActual()" color="light"><img style="width: 40%" src="/assets/iconos/location.png">
+    </ion-fab-button>
+  </ion-fab>
+  <div id="map2"></div>
+</ion-content>
+
+<ion-footer>
+  <ion-toolbar style="background: transparent;">
+    <ion-button color="success" expand="block">
+      Confirmar Servicio
+    </ion-button>
+  </ion-toolbar>
+
+</ion-footer>

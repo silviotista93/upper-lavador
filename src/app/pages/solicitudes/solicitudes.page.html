@@ -1,0 +1,120 @@
+<ion-header no-border>
+  <ion-toolbar mode="ios" color="primary">
+    <ion-buttons slot="start">
+       <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-buttons slot="end">
+      <ion-button>
+        <img slot="start" src="/assets/iconos/notificacion.png">
+      </ion-button>
+    </ion-buttons>
+    <ion-title class="md title-android">
+      Solicitudes
+    </ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <ion-card style="margin-top: 10px;" (click)= "pushDetalleSolicitud()">
+    <ion-card-header style="padding: 10px;">
+      <ion-grid>
+        <ion-row>
+            <ion-col size="3" size-lg="3" size-md="3" size-sm="3" size-xs="4">
+              <ion-avatar style="width: 90px !important; height: 90px !important;">
+                 <img src="../assets/users/user_1.jpg">
+             </ion-avatar>
+            </ion-col>
+            <ion-col size="9" size-lg="9" size-md="9" size-sm="9" size-xs="7">
+              <ion-item lines="none" style="margin-left: -25px;">
+                  <ion-label style="font-size: 14px; color: #000000 !important; font-weight: 600;">Cristian Andres Salazar Castro</ion-label>
+              </ion-item>
+              <ion-item  lines="none" style="margin-left: -30px; margin-top: -13px;">
+                  <ion-icon style="margin-right: 0px;"  name="pin" slot="start"></ion-icon>
+                  <ion-label style="font-size: 14px; color: #606470; font-weight: 500;">16th Avenue, 4th Cross Street, Chennai</ion-label>
+              </ion-item>
+            </ion-col>
+        </ion-row>
+        <ion-row style="float: right;width: 330px;margin-right: -122px; margin-top: -21px;">
+          <ion-col size="1" size-lg="1" size-md="1" size-sm="1" size-xs="4">
+              <ion-item lines="none">
+                  <p style="font-size: 14px; color: #DC3545 !important; font-weight: 600;">Rechazar</p>
+              </ion-item>
+          </ion-col>
+          <ion-col size="1" size-lg="1" size-md="1" size-sm="1" size-xs="4">
+              <ion-item lines="none" style="margin-left: -25px;">
+                  <p style="font-size: 14px; color: #3277D8 !important; font-weight: 600;">Tomar Servicio</p>
+              </ion-item>
+          </ion-col>
+        </ion-row>
+      </ion-grid>
+    </ion-card-header>
+  </ion-card>
+  <ion-card style="margin-top: 10px;" (click)= "pushDetalleSolicitud()">
+      <ion-card-header style="padding: 10px;">
+        <ion-grid>
+          <ion-row>
+              <ion-col size="3" size-lg="3" size-md="3" size-sm="3" size-xs="4">
+                <ion-avatar style="width: 90px !important; height: 90px !important;">
+                   <img src="../assets/users/user_2.jpg">
+               </ion-avatar>
+              </ion-col>
+              <ion-col size="9" size-lg="9" size-md="9" size-sm="9" size-xs="7">
+                <ion-item lines="none" style="margin-left: -25px;">
+                    <ion-label style="font-size: 14px; color: #000000 !important; font-weight: 600;">Daniela Gonzalez</ion-label>
+                </ion-item>
+                <ion-item  lines="none" style="margin-left: -30px; margin-top: -13px;">
+                    <ion-icon style="margin-right: 0px;"  name="pin" slot="start"></ion-icon>
+                    <ion-label style="font-size: 14px; color: #606470; font-weight: 500;">16th Avenue, 4th Cross Street, Chennai</ion-label>
+                </ion-item>
+              </ion-col>
+          </ion-row>
+          <ion-row style="float: right;width: 330px;margin-right: -122px; margin-top: -21px;">
+            <ion-col size="1" size-lg="1" size-md="1" size-sm="1" size-xs="4">
+                <ion-item lines="none">
+                    <p style="font-size: 14px; color: #DC3545 !important; font-weight: 600;">Rechazar</p>
+                </ion-item>
+            </ion-col>
+            <ion-col size="1" size-lg="1" size-md="1" size-sm="1" size-xs="4">
+                <ion-item lines="none" style="margin-left: -25px;">
+                    <p style="font-size: 14px; color: #3277D8 !important; font-weight: 600;">Tomar Servicio</p>
+                </ion-item>
+            </ion-col>
+          </ion-row>
+        </ion-grid>
+      </ion-card-header>
+    </ion-card>
+    <ion-card style="margin-top: 10px;" (click)= "pushDetalleSolicitud()">
+        <ion-card-header style="padding: 10px;">
+          <ion-grid>
+            <ion-row>
+                <ion-col size="3" size-lg="3" size-md="3" size-sm="3" size-xs="4">
+                  <ion-avatar style="width: 90px !important; height: 90px !important;">
+                     <img src="../assets/users/user_3.jpg">
+                 </ion-avatar>
+                </ion-col>
+                <ion-col size="9" size-lg="9" size-md="9" size-sm="9" size-xs="7">
+                  <ion-item lines="none" style="margin-left: -25px;">
+                      <ion-label style="font-size: 14px; color: #000000 !important; font-weight: 600;">Rodinson Tombe Quisoboni</ion-label>
+                  </ion-item>
+                  <ion-item  lines="none" style="margin-left: -30px; margin-top: -13px;">
+                      <ion-icon style="margin-right: 0px;"  name="pin" slot="start"></ion-icon>
+                      <ion-label style="font-size: 14px; color: #606470; font-weight: 500;">16th Avenue, 4th Cross Street, Chennai</ion-label>
+                  </ion-item>
+                </ion-col>
+            </ion-row>
+            <ion-row style="float: right;width: 330px;margin-right: -122px; margin-top: -21px;">
+              <ion-col size="1" size-lg="1" size-md="1" size-sm="1" size-xs="4">
+                  <ion-item lines="none">
+                      <p style="font-size: 14px; color: #DC3545 !important; font-weight: 600;">Rechazar</p>
+                  </ion-item>
+              </ion-col>
+              <ion-col size="1" size-lg="1" size-md="1" size-sm="1" size-xs="4">
+                  <ion-item lines="none" style="margin-left: -25px;">
+                      <p style="font-size: 14px; color: #3277D8 !important; font-weight: 600;">Tomar Servicio</p>
+                  </ion-item>
+              </ion-col>
+            </ion-row>
+          </ion-grid>
+        </ion-card-header>
+      </ion-card>
+</ion-content>
